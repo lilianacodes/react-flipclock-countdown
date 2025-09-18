@@ -30,7 +30,15 @@ export default function App() {
       alignItems: "center",          // Center vertically
       backgroundColor: "black"       // Black background
     }}>
-      <div ref={clockRef}></div>      {/* FlipClock will be rendered here */}
+      {/* FlipClock will be rendered here */}
+      <div 
+        ref={clockRef}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      ></div>      
     </div>
   );
 }
