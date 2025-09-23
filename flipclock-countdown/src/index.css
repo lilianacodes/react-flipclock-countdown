@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flip-clock-wrapper .flip-clock-label {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* labels (days, hours, minutes, seconds) color */
+.flip-clock-wrapper .flip-clock-label {
+  color: #085726;
+}
+
+.flip-clock-wrapper ul {
+  background-color: #f5f5dc;
+  /* border-radius: 8px; */
+  /* border: 1px solid #d2cfa0; */
+  border: none;
+}
+
+/* Digits style */
+.flip-clock-wrapper ul li .inn {
+  font-family: 'Arial', sans-serif; 
+  font-size: 3rem;                       
+  color: #000 !important;
+}
+
+/* Optional: separators (dots) */
+.flip-clock-wrapper .flip-clock-dot {
+  background: #085726;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+  background-color: #ceceb5;
+  color: #333333;
+}
+
+.flip-clock-wrapper ul li {
+  background: transparent;
+  border: none;
+}

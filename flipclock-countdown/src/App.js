@@ -23,13 +23,32 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ 
-      height: "100vh",               // Full viewport height
-      display: "flex",               // Use flexbox
-      justifyContent: "center",      // Center horizontally
-      alignItems: "center",          // Center vertically
-      backgroundColor: "black"       // Black background
+    <div 
+      style={{
+        height: "100vh",     
+        width: "100vw",
+        display: "flex",     
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        paddingTop: "40px",     
+        backgroundColor: "black",
     }}>
+
+      {/* Heading */}
+      <h1 style={{
+        marginTop: "50px",
+        marginBottom: "200px", 
+        fontSize: "3rem", 
+        fontWeight: "bold", 
+        color: "#fff",
+        WebkitUserSelect: "none", // Safari
+        msUserSelect: "none",     // IE 10–11
+        userSelect: "none",       // Standart syntax
+        }}>
+        Countdown to New Year 2026
+      </h1>
+
       {/* FlipClock will be rendered here */}
       <div 
         ref={clockRef}
