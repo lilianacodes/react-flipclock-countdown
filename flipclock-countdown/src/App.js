@@ -31,15 +31,14 @@ export default function App() {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
-        paddingTop: "40px",     
         backgroundColor: "black",
     }}>
 
       {/* Heading */}
       <h1 style={{
-        marginTop: "50px",
-        marginBottom: "200px", 
-        fontSize: "3rem", 
+        marginTop: "150px",
+        marginBottom: "150px",
+        fontSize: "5rem", 
         fontWeight: "bold", 
         color: "#fff",
         WebkitUserSelect: "none", // Safari
