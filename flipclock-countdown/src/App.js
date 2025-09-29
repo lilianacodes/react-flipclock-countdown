@@ -5,7 +5,7 @@ export default function App() {
   const clockRef = useRef(null); 
 
   useEffect(() => {
-    if (clockRef.current) {
+    if (clockRef.current && window.jQuery) {
       // Set target date
       const targetDate = new Date("2025-12-31T23:59:59"); 
       const now = new Date();
@@ -23,44 +23,88 @@ export default function App() {
   }, []);
 
   return (
-    <div 
-      style={{
-        height: "100vh",     
-        width: "100vw",
-        display: "flex",     
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        backgroundImage: "url('/ioann-peshkov-Eo0aGGY3PWI-unsplash.jpg')",
-        backgroundSize: "cover",  
-        backgroundPosition: "center", 
-        backgroundRepeat: "no-repeat",    
-        }}>
+    <div style={styles.page}>
+      {/* Background image */}
+      <div style={styles.background}>
 
-      {/* Heading */}
-      <h1 style={{
-        marginTop: "150px",
-        marginBottom: "150px",
-        fontSize: "5rem", 
-        fontWeight: "bold", 
-        color: "#fff",
-        WebkitUserSelect: "none", // Safari
-        msUserSelect: "none",     // IE 10–11
-        userSelect: "none",       // Standart syntax
-        }}>
-        Countdown to New Year 2026
-      </h1>
+        {/* Content with glassmorphism effect */}
+        <div style={styles.container}>
+          <div style={styles.glassCard}>
+            <h1 style={styles.title}>Countdown to New Year 2026</h1>
 
-      {/* FlipClock will be rendered here */}
-      <div 
-        ref={clockRef}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      ></div>      
+            {/* FlipClock will be rendered here */}
+            <div 
+              ref={clockRef}
+              style={styles.clockWrapper}
+              aria-label="Countdown FlipClock"
+            />
+          </div>      
+        </div>
+      </div>
     </div>
   );
 }
 
+const styles = {
+  page: {
+    position: "relative",
+    height: "100vh",
+    width: "100vw",
+    overflow: "hidden",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+  },
+  background: {
+    position: "absolute",
+    inset: 0,
+    backgroundImage: "url('/ioann-peshkov-Eo0aGGY3PWI-unsplash.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    zIndex: 0,
+  },
+  container: {
+    position: "relative",
+    zIndex: 2,
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "2rem 0",
+    boxSizing: "border-box",
+  },
+  glassCard: {
+    minWidth: 500,
+    maxWidth: 1100,
+    padding: "2.5rem 3rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "2rem",
+
+    /* Glassmorphism */
+    background: "rgba(255, 255, 255, 0.06)",
+    border: "1px solid  rgba(5, 80, 39, 0.35)",
+    boxShadow: "0 8px 32px rgba(5, 80, 39, 0.35)",
+    backdropFilter: "blur(5px) saturate(120%)",
+    WebkitBackdropFilter: "blur(5px) saturate(120%)", // Safari
+  },
+  title: {
+    margin: 0,
+    padding: 0,
+    color: "#FFFFFF",
+    fontSize: "3rem",
+    fontWeight: 700,
+    textAlign: "center",
+    userSelect: "none",
+    WebkitUserSelect: "none",
+  },
+  clockWrapper: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "3rem 0",
+  },
+};
