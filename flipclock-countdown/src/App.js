@@ -31,8 +31,11 @@ export default function App() {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
-        backgroundColor: "black",
-    }}>
+        backgroundImage: "url('/ioann-peshkov-Eo0aGGY3PWI-unsplash.jpg')",
+        backgroundSize: "cover",  
+        backgroundPosition: "center", 
+        backgroundRepeat: "no-repeat",    
+        }}>
 
       {/* Heading */}
       <h1 style={{
